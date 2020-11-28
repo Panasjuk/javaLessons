@@ -1,0 +1,5 @@
+#files
+*.ide
+
+#folders
+.idea
