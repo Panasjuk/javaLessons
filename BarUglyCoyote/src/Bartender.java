@@ -1,7 +1,9 @@
-import Beverages.*;
-import UserInput.CommandExecutor;
+import beverages.*;
+import userInput.CommandExecutor;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 public class Bartender implements CommandExecutor{
 
@@ -21,8 +23,8 @@ public class Bartender implements CommandExecutor{
     }
 
     @Override
-    public void Execute(String command) {
-        for (Beverage b : menu){
+    public void execute(String command) {
+        for (Beverage b : menu){ // pattern matcher
             if (command.toLowerCase().contains(b.getBeverageName().toLowerCase())){
                 tryMakeBeverage(b);
                 return;
@@ -33,16 +35,16 @@ public class Bartender implements CommandExecutor{
     }
 
     private void tryMakeBeverage(Beverage beverage) {
-        HashSet<String> mixer = new HashSet<>();
-        for(String ingredient : beverage.getIngredients()){
-            if (warehouse.take(ingredient, 1)){
-                mixer.add(ingredient);
+        HashMap<String, Integer> mixer = new HashMap<>();
+        for(Map.Entry<String, Integer> ingredient : beverage.getIngredients().entrySet()){
+            if (warehouse.take(ingredient.getKey(), ingredient.getValue())){
+                mixer.put(ingredient.getKey(), ingredient.getValue());
             }
             else {
-                for (String leftover : mixer){
-                    warehouse.add(leftover, 1);
+                for (Map.Entry<String, Integer> leftover : beverage.getIngredients().entrySet()){
+                    warehouse.add(leftover.getKey(), leftover.getValue());
                 }
-                System.out.println("Not enough " + ingredient);
+                System.out.println("Not enough " + ingredient.getKey());
                 return;
             }
         }

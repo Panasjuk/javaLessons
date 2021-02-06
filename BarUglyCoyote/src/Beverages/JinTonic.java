@@ -1,12 +1,12 @@
-package Beverages;
+package beverages;
 
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.HashMap;
 
 public class JinTonic extends Beverage {
     public JinTonic() {
-        super("JinTonic", new HashSet<>());
-        String[] i = {"jin", "tonic"};
-        ingredients.addAll(Arrays.asList(i));
+        super("JinTonic", new HashMap<String, Integer>(){{
+            put("jin", 100);
+            put("tonic", 200);
+        }});
     }
 }

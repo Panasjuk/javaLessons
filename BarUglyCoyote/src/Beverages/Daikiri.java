@@ -1,12 +1,13 @@
-package Beverages;
+package beverages;
 
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.HashMap;
 
 public class Daikiri extends Beverage{
     public Daikiri() {
-        super("Daikiri", new HashSet<>());
-        String[] i = {"rum", "sugar", "lime juice"};
-        ingredients.addAll(Arrays.asList(i));
+        super("Daikiri", new HashMap<String, Integer>(){{
+            put("rum", 100);
+            put("sugar", 2);
+            put("lime juice", 250);
+        }});
     }
 }

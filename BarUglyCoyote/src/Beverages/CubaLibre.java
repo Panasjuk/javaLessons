@@ -1,12 +1,13 @@
-package Beverages;
+package beverages;
 
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.HashMap;
 
 public class CubaLibre extends Beverage {
     public CubaLibre() {
-        super("CubaLibre", new HashSet<>());
-        String[] i = {"rum", "cola", "lime"};
-        ingredients.addAll(Arrays.asList(i));
+        super("CubaLibre", new HashMap<String, Integer>(){{
+            put("rum", 100);
+            put("cola", 300);
+            put("lime", 2);
+        }});
     }
 }

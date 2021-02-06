@@ -1,12 +1,12 @@
-package Beverages;
+package beverages;
 
-import java.util.HashSet;
+import java.util.HashMap;
 
 public class Beverage {
     protected String name;
-    protected HashSet<String> ingredients;
+    protected HashMap<String, Integer> ingredients;
 
-    public Beverage(String name, HashSet<String> ingredients){
+    public Beverage(String name, HashMap<String, Integer> ingredients){
         this.name = name;
         this.ingredients = ingredients;
     }
@@ -15,8 +15,8 @@ public class Beverage {
         return name;
     }
 
-    public HashSet<String> getIngredients() {
-        return new HashSet<>(ingredients);
+    public HashMap<String, Integer> getIngredients() {
+        return new HashMap<>(ingredients);
     }
 
     @Override

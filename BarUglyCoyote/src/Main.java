@@ -1,4 +1,4 @@
-import UserInput.UserInputHandler;
+import userInput.UserInputHandler;
 
 import java.util.Scanner;
 
@@ -25,14 +25,14 @@ public class Main {
 
     private static Warehouse createWarehouse() {
         Warehouse warehouse = new Warehouse();
-        warehouse.add("rum", 10);
-        warehouse.add("cola", 5);
-        warehouse.add("sugar", 5);
-        warehouse.add("lime", 5);
-        warehouse.add("lime juice", 10);
-        warehouse.add("liquor", 5);
-        warehouse.add("jin", 5);
-        warehouse.add("tonic", 5);
+        warehouse.add("rum", 1560);
+        warehouse.add("cola", 1540);
+        warehouse.add("sugar", 56);
+        warehouse.add("lime", 53);
+        warehouse.add("lime juice", 8910);
+        warehouse.add("liquor", 750);
+        warehouse.add("jin", 500);
+        warehouse.add("tonic", 5000);
         return warehouse;
     }
 }

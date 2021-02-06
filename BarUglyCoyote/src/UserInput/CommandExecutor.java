@@ -1,5 +1,5 @@
-package UserInput;
+package userInput;
 
 public interface CommandExecutor {
-    void Execute(String command);
+    void execute(String command);
 }

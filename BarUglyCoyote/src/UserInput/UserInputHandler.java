@@ -1,4 +1,4 @@
-package UserInput;
+package userInput;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,7 +23,7 @@ public class UserInputHandler {
         userInput = userInput.toLowerCase();
         UserCommand command = tryGetCommandName(userInput);
         executeCommand(command, userInput);
-        return command == UserCommand.Exit;
+        return command == UserCommand.EXIT;
     }
 
     private UserCommand tryGetCommandName(String userInput) {
@@ -32,26 +32,26 @@ public class UserInputHandler {
                 return command;
             }
         }
-        return UserCommand.IncorrectInput;
+        return UserCommand.INCORRECT_INPUT;
     }
 
     private void writeInputErrorMessage() {
         System.out.println("Unknown command. Please, try again.");
-        System.out.println("For help enter " + UserCommand.Help.getName());
+        System.out.println("For help enter " + UserCommand.HELP.getName());
     }
 
     private void executeCommand(UserCommand command, String userInput) {
         switch (command){
-            case IncorrectInput:
+            case INCORRECT_INPUT:
                 writeInputErrorMessage();
                 break;
-            case Help:
+            case HELP:
                 writeUserInputRulesWithDescription();
                 break;
-            case Make:
+            case MAKE:
                 callBartender(userInput);
                 break;
-            case Exit:
+            case EXIT:
                 System.out.println("Exiting...");
                 break;
         }
@@ -63,6 +63,6 @@ public class UserInputHandler {
     }
 
     private void callBartender(String userInput) {
-        bartender.Execute(userInput);
+        bartender.execute(userInput);
     }
 }

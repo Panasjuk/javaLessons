@@ -1,12 +1,13 @@
-package Beverages;
+package beverages;
 
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.HashMap;
 
 public class MaiTai extends Beverage {
     public MaiTai() {
-        super("MaiTai", new HashSet<>());
-        String[] i = {"rum", "liquor", "lime juice"};
-        ingredients.addAll(Arrays.asList(i));
+        super("MaiTai", new HashMap<String, Integer>(){{
+            put("rum", 100);
+            put("liquor", 100);
+            put("lime juice", 200);
+        }});
     }
 }
